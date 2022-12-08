@@ -29,6 +29,16 @@ class TasksViewController: UITabBarController {
         return button
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.bounces = false
+        
+        return tableView
+    }()
+    
+    let idTaskCell = "idTaskCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +48,10 @@ class TasksViewController: UITabBarController {
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTaskCell)
         
         setConstraints()
         swipeAction()
@@ -84,6 +98,31 @@ class TasksViewController: UITabBarController {
     }
 }
 
+extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTaskCell, for: indexPath) as! TasksTableViewCell
+        cell.cellTaskDelegate = self
+        cell.indexPath = indexPath
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        90
+    }
+}
+
+//MARK: PressReadyTaskButtonProtocol
+
+extension TasksViewController: PressReadyTaskButtonProtocol {
+    func readyButtonTapped(indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+}
+
 
 
 //MARK: FSCalendarDelegate, FSCalendarDataSource
@@ -123,6 +162,14 @@ extension TasksViewController {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             showHideButton.widthAnchor.constraint(equalToConstant: 100),
             showHideButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: tabBar.topAnchor, constant: 0)
         ])
     }
 }
