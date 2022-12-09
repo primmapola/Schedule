@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7489794529414D07001E2F91 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7489794429414D07001E2F91 /* FSCalendar */; };
+		744922A02942B1F500C99C44 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7449229F2942B1F500C99C44 /* FSCalendar */; };
+		744922A22942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922A12942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift */; };
 		7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */; };
 		7489794D29417309001E2F91 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794C29417309001E2F91 /* UIStackView.swift */; };
 		7489794F29417B1E001E2F91 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794E29417B1E001E2F91 /* UILabel.swift */; };
 		74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74897950294181F7001E2F91 /* TasksTableViewCell.swift */; };
 		7489795329418491001E2F91 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795229418491001E2F91 /* UIFont.swift */; };
 		7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795529418D68001E2F91 /* PressButtonProtocols.swift */; };
+		7489795B29429A43001E2F91 /* OptionsScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */; };
+		748979602942A200001E2F91 /* OptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795F2942A200001E2F91 /* OptionsScheduleTableViewCell.swift */; };
 		74B2421829411A4D0015B836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2421729411A4D0015B836 /* AppDelegate.swift */; };
 		74B2421C29411A4D0015B836 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2421B29411A4D0015B836 /* MainTabBarController.swift */; };
 		74B2422129411A4E0015B836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B2422029411A4E0015B836 /* Assets.xcassets */; };
@@ -44,13 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7489794229414CCC001E2F91 /* FSCalendar-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "FSCalendar-master"; path = "../../../Downloads/FSCalendar-master"; sourceTree = "<group>"; };
+		7449229B2942A8E900C99C44 /* FSCalendar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FSCalendar; path = "../../../Library/Developer/Xcode/DerivedData/asd-etktxgbblmbkjxdnqwkolxjhwkwp/SourcePackages/checkouts/FSCalendar"; sourceTree = "<group>"; };
+		7449229D2942B17700C99C44 /* FSCalendar-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "FSCalendar-master"; path = "../../Downloads/FSCalendar-master"; sourceTree = "<group>"; };
+		744922A12942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7489794C29417309001E2F91 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		7489794E29417B1E001E2F91 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		74897950294181F7001E2F91 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		7489795229418491001E2F91 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7489795529418D68001E2F91 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
+		7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewController.swift; sourceTree = "<group>"; };
+		7489795F2942A200001E2F91 /* OptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		74B2421429411A4D0015B836 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B2421729411A4D0015B836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74B2421B29411A4D0015B836 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -72,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7489794529414D07001E2F91 /* FSCalendar in Frameworks */,
+				744922A02942B1F500C99C44 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7449229C2942B17700C99C44 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				7449229D2942B17700C99C44 /* FSCalendar-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		7449229E2942B1F500C99C44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7489794629416A3C001E2F91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +126,9 @@
 		7489794729416A4A001E2F91 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */,
-				74897950294181F7001E2F91 /* TasksTableViewCell.swift */,
+				7489795E2942A1B3001E2F91 /* Schedule */,
+				7489795D2942A1AD001E2F91 /* Tasks */,
+				7489795C2942A1A2001E2F91 /* Contacts */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -136,13 +159,65 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7489795729429778001E2F91 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				74B2424A29411F1A0015B836 /* ScheduleViewController.swift */,
+				7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		748979582942977F001E2F91 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				74B2424E29411F3E0015B836 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		7489795929429786001E2F91 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				74B2424C29411F270015B836 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		7489795C2942A1A2001E2F91 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		7489795D2942A1AD001E2F91 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				74897950294181F7001E2F91 /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		7489795E2942A1B3001E2F91 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */,
+				7489795F2942A200001E2F91 /* OptionsScheduleTableViewCell.swift */,
+				744922A12942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		74B2420B29411A4D0015B836 = {
 			isa = PBXGroup;
 			children = (
+				7449229C2942B17700C99C44 /* Packages */,
 				74B2421629411A4D0015B836 /* Schedule */,
 				74B2422D29411A4F0015B836 /* ScheduleTests */,
 				74B2423729411A4F0015B836 /* ScheduleUITests */,
 				74B2421529411A4D0015B836 /* Products */,
+				7449229E2942B1F500C99C44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,7 +255,7 @@
 		74B2423729411A4F0015B836 /* ScheduleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7489794229414CCC001E2F91 /* FSCalendar-master */,
+				7449229B2942A8E900C99C44 /* FSCalendar */,
 				74B2423829411A4F0015B836 /* ScheduleUITests.swift */,
 				74B2423A29411A4F0015B836 /* ScheduleUITestsLaunchTests.swift */,
 			);
@@ -199,9 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				74B2421B29411A4D0015B836 /* MainTabBarController.swift */,
-				74B2424A29411F1A0015B836 /* ScheduleViewController.swift */,
-				74B2424C29411F270015B836 /* TasksViewController.swift */,
-				74B2424E29411F3E0015B836 /* ContactsViewController.swift */,
+				7489795729429778001E2F91 /* Schedule */,
+				7489795929429786001E2F91 /* Tasks */,
+				748979582942977F001E2F91 /* Contacts */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,7 +308,7 @@
 			);
 			name = Schedule;
 			packageProductDependencies = (
-				7489794429414D07001E2F91 /* FSCalendar */,
+				7449229F2942B1F500C99C44 /* FSCalendar */,
 			);
 			productName = Schedule;
 			productReference = 74B2421429411A4D0015B836 /* Schedule.app */;
@@ -358,8 +433,11 @@
 				74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */,
 				7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */,
 				74B2424D29411F270015B836 /* TasksViewController.swift in Sources */,
+				748979602942A200001E2F91 /* OptionsScheduleTableViewCell.swift in Sources */,
+				7489795B29429A43001E2F91 /* OptionsScheduleTableViewController.swift in Sources */,
 				7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */,
 				74B2424B29411F1A0015B836 /* ScheduleViewController.swift in Sources */,
+				744922A22942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift in Sources */,
 				7489794F29417B1E001E2F91 /* UILabel.swift in Sources */,
 				7489795329418491001E2F91 /* UIFont.swift in Sources */,
 				74B2424F29411F3E0015B836 /* ContactsViewController.swift in Sources */,
@@ -709,7 +787,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7489794429414D07001E2F91 /* FSCalendar */ = {
+		7449229F2942B1F500C99C44 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7489794329414D07001E2F91 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
