@@ -7,10 +7,9 @@
 
 import UIKit
 
-class HeaderOptionsScheduleTableViewCell: UITableViewHeaderFooterView {
+class HeaderOptionsTableViewCell: UITableViewHeaderFooterView {
     
     let headerLabel = UILabel(text: "", font: .avenirNext14(), aligment: .left)
-    let headerNameArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
 
     
     override init(reuseIdentifier: String?) {
@@ -27,8 +26,8 @@ class HeaderOptionsScheduleTableViewCell: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func headerConfiguration(section: Int) {
-        headerLabel.text = headerNameArray[section]
+    func headerConfiguration(nameArray: [String], section: Int) {
+        headerLabel.text = nameArray[section]
     }
     
     func setConstraints() {

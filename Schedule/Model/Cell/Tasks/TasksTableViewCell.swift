@@ -10,7 +10,7 @@ import UIKit
 class TasksTableViewCell: UITableViewCell {
     
     let taskName = UILabel(text: "Программирование", font: .avenirNextDemiBold20(), aligment: .left)
-    let taskDescription = UILabel(text: "Науситься писать на прологе", font: .avenirNext14(), aligment: .left)
+    let taskDescription = UILabel(text: "Научиться писать на прологе", font: .avenirNext14(), aligment: .left)
     
     let readyButton: UIButton = {
         let button = UIButton()

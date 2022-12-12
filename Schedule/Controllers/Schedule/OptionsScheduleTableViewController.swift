@@ -11,6 +11,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
+    let headerNameArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.bounces = false
         
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,8 +60,8 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsScheduleTableViewCell
-        header.headerConfiguration(section: section)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsTableViewCell
+        header.headerConfiguration(nameArray: headerNameArray, section: section)
         return header
     }
     
