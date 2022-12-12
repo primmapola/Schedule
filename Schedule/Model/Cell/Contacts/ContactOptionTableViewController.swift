@@ -1,13 +1,13 @@
 //
-//  OptionsScheduleViewController.swift
+//  ContactOptionTableViewController.swift
 //  Schedule
 //
-//  Created by Grigory Don on 09.12.2022.
+//  Created by Grigory Don on 12.12.2022.
 //
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class ContactOptionTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"

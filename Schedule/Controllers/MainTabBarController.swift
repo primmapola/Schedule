@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController {
 
         let scheduleViewController = createNaigationController(vc: ScheduleViewController(), itemName: "Schedule", itemImage: "calendar.badge.clock")
         let taskViewController = createNaigationController(vc: TasksViewController(), itemName: "Task", itemImage: "text.badge.checkmark")
-        let contactsViewController = createNaigationController(vc: ContactsViewController(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
+        let contactsViewController = createNaigationController(vc: ContactsTableViewController(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
 
         viewControllers = [scheduleViewController, taskViewController, contactsViewController]
     }

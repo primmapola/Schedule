@@ -7,12 +7,13 @@
 
 import UIKit
 
-class OptionsScheduleTableViewCell: UITableViewCell {
+class OptionsTableViewCell: UITableViewCell {
     
-    let backgroundViewCell: UIView = {
-        let view = UIView()
+    let backgroundViewCell: UIImageView = {
+        let view = UIImageView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 10
+        view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -36,13 +37,15 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
-    let cellNames = [
-        ["Дата", "Время"],
-        ["Название", "Тип", "Корпус", "Аудитория"],
-        ["Имя преподавателя"],
-        [""],
-        ["Повторять каждые 7 дней"]
-    ]
+//    let addImageContact: UIImageView = {
+//       let iv = UIImageView()
+//        iv.layer.cornerRadius = 10
+//        iv.translatesAutoresizingMaskIntoConstraints = false
+//        iv.isHidden = true
+//        iv.image = UIImage(systemName: "person.fill.badge.plus")
+//
+//        return iv
+//    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -58,8 +61,8 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellConfiguration(indexPath: IndexPath) {
-        nameCellLabel.text = cellNames[indexPath.section][indexPath.row]
+    func cellScheduleConfiguration(nameArray: [[String]], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
         if indexPath == [3,0] {
             backgroundViewCell.backgroundColor = .systemCyan
@@ -67,6 +70,20 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         
         if indexPath == [4,0] {
             repeatSwitch.isHidden = false
+        }
+    }
+    
+    func cellContactCofiguration(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
+    }
+    
+    func cellTaskConfiguration(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath == [3,0] {
+            backgroundViewCell.backgroundColor = .systemCyan
         }
     }
     
@@ -95,5 +112,13 @@ class OptionsScheduleTableViewCell: UITableViewCell {
             repeatSwitch.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             repeatSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20)
         ])
+        
+//        self.addSubview(addImageContact)
+//        NSLayoutConstraint.activate([
+//            addImageContact.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+//            addImageContact.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+//            addImageContact.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+//            addImageContact.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+//        ])
     }
 }

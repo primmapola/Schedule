@@ -25,9 +25,7 @@ class OptionsTaskTableViewCell: UITableViewCell {
         
         return label
     }()
-    
-    let cellNames = ["Дата","Название","Задача",""]
-    
+        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,13 +39,7 @@ class OptionsTaskTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellConfiguration(indexPath: IndexPath) {
-        nameCellLabel.text = cellNames[indexPath.section]
-        
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .systemCyan
-        }
-    }
+    
     
     func setConstraints() {
         

@@ -1,5 +1,5 @@
 //
-//  TaskOptionScheduleView.swift
+//  ContactOptionTableViewController.swift
 //  Schedule
 //
 //  Created by Grigory Don on 12.12.2022.
@@ -7,19 +7,18 @@
 
 import UIKit
 
-class TaskOptionTableView: UITableViewController {
+class ContactOptionTableViewController: UITableViewController {
     
-    let idOptionsTasksCell = "idOptionsTasksCell"
-    let idOptionsTasksHeader = "idOptionsTasksHeader"
+    let idOptionsContactCell = "idOptionsContactCell"
+    let idOptionsContactHeader = "idOptionsContactHeader"
+    let headerNameArray = ["ИМЯ", "ТЕЛЕФОН", "ПОЧТА", "ТИП", "ВЫБЕРИТЕ ИЗОБРАЖЕНИЕ"]
     
-    let headerNameArray = ["ДАТА", "НАЗВАНИЕ", "ЗАДАЧА", "ЦВЕТ"]
-    let cellNames = ["Дата","Название","Задача",""]
-
+    let cellNameArray = ["name", "phone", "mail", "type", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Option Tasks"
+        title = "Option Schedule"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,31 +27,31 @@ class TaskOptionTableView: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsContactCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsContactHeader)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        4
+        5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+       1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTasksCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellTaskConfiguration(nameArray: cellNames, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactCell, for: indexPath) as! OptionsTableViewCell
+        cell.cellContactCofiguration(nameArray: cellNameArray, indexPath: indexPath)
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        indexPath.section == 4 ? 200 : 44
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsTasksHeader) as! HeaderOptionsTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsContactHeader) as! HeaderOptionsTableViewCell
         header.headerConfiguration(nameArray: headerNameArray, section: section)
         return header
     }
@@ -67,16 +66,16 @@ class TaskOptionTableView: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            AlertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-                print(numberWeekday, date)}
+            alertForCellName(label: cell.nameCellLabel, name: "Имя", placeholder: "Введите имя")
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Название", placeholder: "Введите название заметки")
+            alertForCellName(label: cell.nameCellLabel, name: "Телефон", placeholder: "Введите номер телефона")
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Задача", placeholder: "")
-        case 3:
-            pushControllers(vc: ColorTaskTableViewController())
+            alertForCellName(label: cell.nameCellLabel, name: "Почта", placeholder: "Введите электронный адрес")
+        case 3: alertContact(label: cell.nameCellLabel) { (type) in
+            print(type)
+        }
         default:
-            print("")
+            print("asd")
         }
         
         func pushControllers(vc: UIViewController) {
@@ -88,4 +87,3 @@ class TaskOptionTableView: UITableViewController {
         }
     }
 }
-
