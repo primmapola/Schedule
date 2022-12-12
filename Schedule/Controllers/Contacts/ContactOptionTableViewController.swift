@@ -71,9 +71,13 @@ class ContactOptionTableViewController: UITableViewController {
             alertForCellName(label: cell.nameCellLabel, name: "Телефон", placeholder: "Введите номер телефона")
         case 2:
             alertForCellName(label: cell.nameCellLabel, name: "Почта", placeholder: "Введите электронный адрес")
-        case 3: alertContact(label: cell.nameCellLabel) { (type) in
+        case 3: alertPerson(label: cell.nameCellLabel) { (type) in
             print(type)
         }
+        case 4:
+            alertPhoto { source in
+                self.chooseImagePicker(source: source)
+            }
         default:
             print("asd")
         }
@@ -85,5 +89,28 @@ class ContactOptionTableViewController: UITableViewController {
             navigationController?.pushViewController(viewController, animated: true)
 
         }
+    }
+}
+
+extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let ip = UIImagePickerController()
+            ip.delegate = self
+            ip.allowsEditing = true
+            ip.sourceType = source
+            present(ip, animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let cell = tableView.cellForRow(at: [4,0]) as! OptionsTableViewCell
+        
+        cell.backgroundViewCell.image = info[.editedImage] as? UIImage
+        cell.backgroundViewCell.contentMode = .scaleAspectFill
+        cell.backgroundViewCell.clipsToBounds = true
+        dismiss(animated: true)
     }
 }
