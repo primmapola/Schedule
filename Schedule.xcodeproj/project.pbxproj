@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		744922A02942B1F500C99C44 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7449229F2942B1F500C99C44 /* FSCalendar */; };
 		744922A22942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922A12942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift */; };
+		744922BF2946753400C99C44 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922BE2946753400C99C44 /* AlertDate.swift */; };
+		744922C229467B0900C99C44 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922C129467B0900C99C44 /* AlertTime.swift */; };
+		744922C429467D3A00C99C44 /* AlertCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922C329467D3A00C99C44 /* AlertCellName.swift */; };
+		744922C72946810800C99C44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 744922C62946810800C99C44 /* Realm */; };
+		744922C92946810800C99C44 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 744922C82946810800C99C44 /* RealmSwift */; };
+		744922CB2946A43200C99C44 /* ScheduleColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */; };
+		744922CD2946A43E00C99C44 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922CC2946A43E00C99C44 /* TeachersViewController.swift */; };
 		7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */; };
 		7489794D29417309001E2F91 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794C29417309001E2F91 /* UIStackView.swift */; };
 		7489794F29417B1E001E2F91 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794E29417B1E001E2F91 /* UILabel.swift */; };
@@ -50,6 +57,11 @@
 		7449229B2942A8E900C99C44 /* FSCalendar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FSCalendar; path = "../../../Library/Developer/Xcode/DerivedData/asd-etktxgbblmbkjxdnqwkolxjhwkwp/SourcePackages/checkouts/FSCalendar"; sourceTree = "<group>"; };
 		7449229D2942B17700C99C44 /* FSCalendar-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "FSCalendar-master"; path = "../../Downloads/FSCalendar-master"; sourceTree = "<group>"; };
 		744922A12942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		744922BE2946753400C99C44 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		744922C129467B0900C99C44 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
+		744922C329467D3A00C99C44 /* AlertCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellName.swift; sourceTree = "<group>"; };
+		744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorsViewController.swift; sourceTree = "<group>"; };
+		744922CC2946A43E00C99C44 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7489794C29417309001E2F91 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		7489794E29417B1E001E2F91 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -79,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744922C92946810800C99C44 /* RealmSwift in Frameworks */,
+				744922C72946810800C99C44 /* Realm in Frameworks */,
 				744922A02942B1F500C99C44 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,9 +129,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		744922BD2946751800C99C44 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				744922BE2946753400C99C44 /* AlertDate.swift */,
+				744922C129467B0900C99C44 /* AlertTime.swift */,
+				744922C329467D3A00C99C44 /* AlertCellName.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		7489794629416A3C001E2F91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				744922BD2946751800C99C44 /* Alert */,
 				7489794729416A4A001E2F91 /* Cell */,
 			);
 			path = Model;
@@ -164,6 +189,7 @@
 			children = (
 				74B2424A29411F1A0015B836 /* ScheduleViewController.swift */,
 				7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */,
+				744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -172,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				74B2424E29411F3E0015B836 /* ContactsViewController.swift */,
+				744922CC2946A43E00C99C44 /* TeachersViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -309,6 +336,8 @@
 			name = Schedule;
 			packageProductDependencies = (
 				7449229F2942B1F500C99C44 /* FSCalendar */,
+				744922C62946810800C99C44 /* Realm */,
+				744922C82946810800C99C44 /* RealmSwift */,
 			);
 			productName = Schedule;
 			productReference = 74B2421429411A4D0015B836 /* Schedule.app */;
@@ -384,6 +413,7 @@
 			mainGroup = 74B2420B29411A4D0015B836;
 			packageReferences = (
 				7489794329414D07001E2F91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				744922C52946810800C99C44 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 74B2421529411A4D0015B836 /* Products */;
 			projectDirPath = "";
@@ -428,9 +458,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B2421C29411A4D0015B836 /* MainTabBarController.swift in Sources */,
+				744922C229467B0900C99C44 /* AlertTime.swift in Sources */,
 				74B2421829411A4D0015B836 /* AppDelegate.swift in Sources */,
 				7489794D29417309001E2F91 /* UIStackView.swift in Sources */,
 				74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */,
+				744922BF2946753400C99C44 /* AlertDate.swift in Sources */,
 				7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */,
 				74B2424D29411F270015B836 /* TasksViewController.swift in Sources */,
 				748979602942A200001E2F91 /* OptionsScheduleTableViewCell.swift in Sources */,
@@ -438,9 +470,12 @@
 				7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */,
 				74B2424B29411F1A0015B836 /* ScheduleViewController.swift in Sources */,
 				744922A22942B60900C99C44 /* HeaderOptionsScheduleTableViewCell.swift in Sources */,
+				744922CD2946A43E00C99C44 /* TeachersViewController.swift in Sources */,
 				7489794F29417B1E001E2F91 /* UILabel.swift in Sources */,
 				7489795329418491001E2F91 /* UIFont.swift in Sources */,
+				744922CB2946A43200C99C44 /* ScheduleColorsViewController.swift in Sources */,
 				74B2424F29411F3E0015B836 /* ContactsViewController.swift in Sources */,
+				744922C429467D3A00C99C44 /* AlertCellName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +811,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		744922C52946810800C99C44 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7489794329414D07001E2F91 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
@@ -791,6 +834,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7489794329414D07001E2F91 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		744922C62946810800C99C44 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744922C52946810800C99C44 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		744922C82946810800C99C44 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744922C52946810800C99C44 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

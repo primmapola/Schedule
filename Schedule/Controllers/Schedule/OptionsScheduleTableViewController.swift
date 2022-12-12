@@ -22,6 +22,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1.00)
         tableView.separatorStyle = .none
+        tableView.bounces = false
         
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
@@ -54,7 +55,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        44
+        50
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -65,5 +66,45 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         25
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
+        
+        switch indexPath {
+        case [0,0]:
+            AlertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+                print(numberWeekday, date)
+            }
+        case [0,1]:
+            AlertTime(label: cell.nameCellLabel) { date in
+                print(date)
+            }
+        case [1,0]:
+            alertForCellName(label: cell.nameCellLabel, name: "Предмет", placeholder: "Введите название предмета")
+        case [1,1]:
+            alertForCellName(label: cell.nameCellLabel, name: "Тип", placeholder: "Введите тип предмета")
+        case [1,2]:
+            alertForCellName(label: cell.nameCellLabel, name: "Корпус", placeholder: "Введите номер корпуса")
+        case [1,3]:
+            alertForCellName(label: cell.nameCellLabel, name: "Аудитория", placeholder: "Введите номер аудитории")
+        case [2,0]:
+            let teachers = TeachersViewController()
+            pushControllers(vc: teachers)
+        case [3,0]:
+            let colors = ScheduleColorsViewController()
+            pushControllers(vc: colors)
+        default:
+            print("ERROR")
+        }
+        
+        func pushControllers(vc: UIViewController) {
+            
+            let viewController = vc
+            navigationController?.navigationBar.topItem?.title = "Options"
+            navigationController?.pushViewController(viewController, animated: true)
+
+        }
     }
 }
