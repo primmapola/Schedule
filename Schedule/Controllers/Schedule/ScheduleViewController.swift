@@ -67,7 +67,7 @@ class ScheduleViewController: UITabBarController {
     @objc func addButtonTapped() {
         
         
-        let scheduleOption = OptionsScheduleTableViewController()
+        let scheduleOption = ScheduleOptionsTableViewController()
         navigationController?.pushViewController(scheduleOption, animated: true)
     }
     

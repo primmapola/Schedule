@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactOptionTableViewController: UITableViewController {
+class ContactOptionsTableViewController: UITableViewController {
     
     let idOptionsContactCell = "idOptionsContactCell"
     let idOptionsContactHeader = "idOptionsContactHeader"
@@ -66,11 +66,17 @@ class ContactOptionTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            alertForCellName(label: cell.nameCellLabel, name: "Имя", placeholder: "Введите имя")
+            alertForCellName(label: cell.nameCellLabel, name: "Имя", placeholder: "Введите имя") {
+                text in print(text)
+            }
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Телефон", placeholder: "Введите номер телефона")
+            alertForCellName(label: cell.nameCellLabel, name: "Телефон", placeholder: "Введите номер телефона"){
+                text in print(text)
+            }
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Почта", placeholder: "Введите электронный адрес")
+            alertForCellName(label: cell.nameCellLabel, name: "Почта", placeholder: "Введите электронный адрес"){
+                text in print(text)
+            }
         case 3: alertPerson(label: cell.nameCellLabel) { (type) in
             print(type)
         }
@@ -92,7 +98,7 @@ class ContactOptionTableViewController: UITableViewController {
     }
 }
 
-extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ContactOptionsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {

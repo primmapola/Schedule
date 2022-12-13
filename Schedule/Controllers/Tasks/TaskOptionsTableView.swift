@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskOptionTableView: UITableViewController {
+class TaskOptionsTableView: UITableViewController {
     
     let idOptionsTasksCell = "idOptionsTasksCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
@@ -70,11 +70,15 @@ class TaskOptionTableView: UITableViewController {
             AlertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
                 print(numberWeekday, date)}
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Название", placeholder: "Введите название заметки")
+            alertForCellName(label: cell.nameCellLabel, name: "Название", placeholder: "Введите название заметки") {
+                text in print(text)
+            }
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Задача", placeholder: "")
+            alertForCellName(label: cell.nameCellLabel, name: "Задача", placeholder: "") {
+                text in print(text)
+            }
         case 3:
-            pushControllers(vc: ColorTaskTableViewController())
+            pushControllers(vc: TaskColorsTableViewController())
         default:
             print("")
         }

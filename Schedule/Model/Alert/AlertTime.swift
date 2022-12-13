@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func AlertTime(label: UILabel, completionHandler: @escaping (NSDate) -> Void) {
+    func AlertTime(label: UILabel, completionHandler: @escaping (Date) -> Void) {
         
         let alert = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         
@@ -26,7 +26,7 @@ extension UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             let timeString = dateFormatter.string(from: datePicker.date)
-            let timeSchedule = datePicker.date as NSDate
+            let timeSchedule = datePicker.date
             completionHandler(timeSchedule)
             
             label.text = timeString

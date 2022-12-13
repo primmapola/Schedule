@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorTaskTableViewController: UITableViewController {
+class TaskColorsTableViewController: UITableViewController {
     
     let idTasksColorCell = "idTasksColorCell"
     let idTasksScheduleHeader = "idTasksScheduleHeader"

@@ -17,21 +17,24 @@
 		744922CB2946A43200C99C44 /* ScheduleColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */; };
 		744922CD2946A43E00C99C44 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922CC2946A43E00C99C44 /* TeachersViewController.swift */; };
 		744922CF2946A9C200C99C44 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922CE2946A9C200C99C44 /* ColorTableViewCell.swift */; };
-		744922D12946B32D00C99C44 /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922D02946B32D00C99C44 /* TaskOptionTableView.swift */; };
+		744922D12946B32D00C99C44 /* TaskOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922D02946B32D00C99C44 /* TaskOptionsTableView.swift */; };
 		744922D32946B45F00C99C44 /* OptionsTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922D22946B45F00C99C44 /* OptionsTaskTableViewCell.swift */; };
-		744922D52946B94700C99C44 /* ColorTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922D42946B94700C99C44 /* ColorTaskTableViewController.swift */; };
-		744922E029472B4C00C99C44 /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922DA2946D8BA00C99C44 /* ContactOptionTableViewController.swift */; };
+		744922D52946B94700C99C44 /* TaskColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922D42946B94700C99C44 /* TaskColorsTableViewController.swift */; };
+		744922E029472B4C00C99C44 /* ContactOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922DA2946D8BA00C99C44 /* ContactOptionsTableViewController.swift */; };
 		744922E229472D3400C99C44 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922E129472D3400C99C44 /* ContactTableViewController.swift */; };
 		744922E429472DC200C99C44 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922E329472DC200C99C44 /* ContactTableViewCell.swift */; };
 		744922E629472DFB00C99C44 /* AlertPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922E529472DFB00C99C44 /* AlertPerson.swift */; };
 		744922E8294730AC00C99C44 /* AlertPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922E7294730AC00C99C44 /* AlertPhoto.swift */; };
+		7449233529488E8000C99C44 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449233429488E8000C99C44 /* ScheduleModel.swift */; };
+		744923392948904500C99C44 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744923382948904500C99C44 /* StorageManager.swift */; };
+		7449233B2948A9EF00C99C44 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449233A2948A9EF00C99C44 /* UIColor.swift */; };
 		7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */; };
 		7489794D29417309001E2F91 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794C29417309001E2F91 /* UIStackView.swift */; };
 		7489794F29417B1E001E2F91 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489794E29417B1E001E2F91 /* UILabel.swift */; };
 		74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74897950294181F7001E2F91 /* TasksTableViewCell.swift */; };
 		7489795329418491001E2F91 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795229418491001E2F91 /* UIFont.swift */; };
 		7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795529418D68001E2F91 /* PressButtonProtocols.swift */; };
-		7489795B29429A43001E2F91 /* OptionsScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */; };
+		7489795B29429A43001E2F91 /* ScheduleOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795A29429A43001E2F91 /* ScheduleOptionsTableViewController.swift */; };
 		748979602942A200001E2F91 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489795F2942A200001E2F91 /* OptionsTableViewCell.swift */; };
 		74B2421829411A4D0015B836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2421729411A4D0015B836 /* AppDelegate.swift */; };
 		74B2421C29411A4D0015B836 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2421B29411A4D0015B836 /* MainTabBarController.swift */; };
@@ -71,22 +74,25 @@
 		744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorsViewController.swift; sourceTree = "<group>"; };
 		744922CC2946A43E00C99C44 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		744922CE2946A9C200C99C44 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
-		744922D02946B32D00C99C44 /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
+		744922D02946B32D00C99C44 /* TaskOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableView.swift; sourceTree = "<group>"; };
 		744922D22946B45F00C99C44 /* OptionsTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTaskTableViewCell.swift; sourceTree = "<group>"; };
-		744922D42946B94700C99C44 /* ColorTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTaskTableViewController.swift; sourceTree = "<group>"; };
+		744922D42946B94700C99C44 /* TaskColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorsTableViewController.swift; sourceTree = "<group>"; };
 		744922D82946D27A00C99C44 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
-		744922DA2946D8BA00C99C44 /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
+		744922DA2946D8BA00C99C44 /* ContactOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionsTableViewController.swift; sourceTree = "<group>"; };
 		744922E129472D3400C99C44 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		744922E329472DC200C99C44 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		744922E529472DFB00C99C44 /* AlertPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPerson.swift; sourceTree = "<group>"; };
 		744922E7294730AC00C99C44 /* AlertPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhoto.swift; sourceTree = "<group>"; };
+		7449233429488E8000C99C44 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		744923382948904500C99C44 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		7449233A2948A9EF00C99C44 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7489794829416A74001E2F91 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7489794C29417309001E2F91 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		7489794E29417B1E001E2F91 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		74897950294181F7001E2F91 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		7489795229418491001E2F91 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7489795529418D68001E2F91 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
-		7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewController.swift; sourceTree = "<group>"; };
+		7489795A29429A43001E2F91 /* ScheduleOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewController.swift; sourceTree = "<group>"; };
 		7489795F2942A200001E2F91 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		74B2421429411A4D0015B836 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B2421729411A4D0015B836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,9 +164,26 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		7449233329488E6E00C99C44 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7449233429488E8000C99C44 /* ScheduleModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		744923372948902800C99C44 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				744923382948904500C99C44 /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7489794629416A3C001E2F91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7449233329488E6E00C99C44 /* Realm */,
 				744922BD2946751800C99C44 /* Alert */,
 				7489794729416A4A001E2F91 /* Cell */,
 			);
@@ -194,6 +217,7 @@
 				7489794C29417309001E2F91 /* UIStackView.swift */,
 				7489794E29417B1E001E2F91 /* UILabel.swift */,
 				7489795229418491001E2F91 /* UIFont.swift */,
+				7449233A2948A9EF00C99C44 /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -210,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				74B2424A29411F1A0015B836 /* ScheduleViewController.swift */,
-				7489795A29429A43001E2F91 /* OptionsScheduleTableViewController.swift */,
+				7489795A29429A43001E2F91 /* ScheduleOptionsTableViewController.swift */,
 				744922CA2946A43200C99C44 /* ScheduleColorsViewController.swift */,
 			);
 			path = Schedule;
@@ -220,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				744922E129472D3400C99C44 /* ContactTableViewController.swift */,
-				744922DA2946D8BA00C99C44 /* ContactOptionTableViewController.swift */,
+				744922DA2946D8BA00C99C44 /* ContactOptionsTableViewController.swift */,
 				744922CC2946A43E00C99C44 /* TeachersViewController.swift */,
 			);
 			path = Contacts;
@@ -230,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				74B2424C29411F270015B836 /* TasksViewController.swift */,
-				744922D02946B32D00C99C44 /* TaskOptionTableView.swift */,
-				744922D42946B94700C99C44 /* ColorTaskTableViewController.swift */,
+				744922D02946B32D00C99C44 /* TaskOptionsTableView.swift */,
+				744922D42946B94700C99C44 /* TaskColorsTableViewController.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -291,6 +315,7 @@
 				74B2424829411C2C0015B836 /* Controllers */,
 				74B2424929411C350015B836 /* Resources */,
 				7489794629416A3C001E2F91 /* Model */,
+				744923372948902800C99C44 /* Services */,
 				7489795429418D40001E2F91 /* Protocols */,
 				7489794A294172B3001E2F91 /* Extensions */,
 			);
@@ -488,23 +513,26 @@
 				74B2421C29411A4D0015B836 /* MainTabBarController.swift in Sources */,
 				744922C229467B0900C99C44 /* AlertTime.swift in Sources */,
 				74B2421829411A4D0015B836 /* AppDelegate.swift in Sources */,
+				744923392948904500C99C44 /* StorageManager.swift in Sources */,
 				7489794D29417309001E2F91 /* UIStackView.swift in Sources */,
 				74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */,
 				744922BF2946753400C99C44 /* AlertDate.swift in Sources */,
+				7449233529488E8000C99C44 /* ScheduleModel.swift in Sources */,
 				7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */,
 				74B2424D29411F270015B836 /* TasksViewController.swift in Sources */,
 				748979602942A200001E2F91 /* OptionsTableViewCell.swift in Sources */,
-				7489795B29429A43001E2F91 /* OptionsScheduleTableViewController.swift in Sources */,
+				7489795B29429A43001E2F91 /* ScheduleOptionsTableViewController.swift in Sources */,
 				744922E429472DC200C99C44 /* ContactTableViewCell.swift in Sources */,
 				7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */,
 				74B2424B29411F1A0015B836 /* ScheduleViewController.swift in Sources */,
 				744922A22942B60900C99C44 /* HeaderOptionsTableViewCell.swift in Sources */,
 				744922CD2946A43E00C99C44 /* TeachersViewController.swift in Sources */,
-				744922D52946B94700C99C44 /* ColorTaskTableViewController.swift in Sources */,
+				7449233B2948A9EF00C99C44 /* UIColor.swift in Sources */,
+				744922D52946B94700C99C44 /* TaskColorsTableViewController.swift in Sources */,
 				744922D32946B45F00C99C44 /* OptionsTaskTableViewCell.swift in Sources */,
-				744922D12946B32D00C99C44 /* TaskOptionTableView.swift in Sources */,
+				744922D12946B32D00C99C44 /* TaskOptionsTableView.swift in Sources */,
 				7489794F29417B1E001E2F91 /* UILabel.swift in Sources */,
-				744922E029472B4C00C99C44 /* ContactOptionTableViewController.swift in Sources */,
+				744922E029472B4C00C99C44 /* ContactOptionsTableViewController.swift in Sources */,
 				744922E229472D3400C99C44 /* ContactTableViewController.swift in Sources */,
 				7489795329418491001E2F91 /* UIFont.swift in Sources */,
 				744922E8294730AC00C99C44 /* AlertPhoto.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class ScheduleOptionsTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
@@ -21,6 +21,9 @@ class OptionsScheduleTableViewController: UITableViewController {
         [""],
         ["Повторять каждые 7 дней"]
     ]
+    
+    private let scheduleModel = ScheduleModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,12 @@ class OptionsScheduleTableViewController: UITableViewController {
         
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    @objc func saveButtonTapped() {
+        StorageManager.shared.save(model: scheduleModel)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,21 +93,30 @@ class OptionsScheduleTableViewController: UITableViewController {
         
         switch indexPath {
         case [0,0]:
-            AlertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-                print(numberWeekday, date)
+            AlertDate(label: cell.nameCellLabel) { [self] (numberWeekday, date) in
+                scheduleModel.scheduleDate = date
+                scheduleModel.scheduleWeekday = numberWeekday
             }
         case [0,1]:
-            AlertTime(label: cell.nameCellLabel) { date in
-                print(date)
+            AlertTime(label: cell.nameCellLabel) { [self] time in
+                scheduleModel.scheduleTime = time
             }
         case [1,0]:
-            alertForCellName(label: cell.nameCellLabel, name: "Предмет", placeholder: "Введите название предмета")
+            alertForCellName(label: cell.nameCellLabel, name: "Предмет", placeholder: "Введите название предмета") { text in print(text)
+                self.scheduleModel.scheduleName = text
+            }
         case [1,1]:
-            alertForCellName(label: cell.nameCellLabel, name: "Тип", placeholder: "Введите тип предмета")
+            alertForCellName(label: cell.nameCellLabel, name: "Тип", placeholder: "Введите тип предмета") { text in
+                self.scheduleModel.scheduleType = text
+            }
         case [1,2]:
-            alertForCellName(label: cell.nameCellLabel, name: "Корпус", placeholder: "Введите номер корпуса")
+            alertForCellName(label: cell.nameCellLabel, name: "Корпус", placeholder: "Введите номер корпуса") { text in
+                self.scheduleModel.scheduleBuilding = text
+            }
         case [1,3]:
-            alertForCellName(label: cell.nameCellLabel, name: "Аудитория", placeholder: "Введите номер аудитории")
+            alertForCellName(label: cell.nameCellLabel, name: "Аудитория", placeholder: "Введите номер аудитории") { text in
+                self.scheduleModel.scheduleAudience = text
+            }
         case [2,0]:
             let teachers = TeachersViewController()
             pushControllers(vc: teachers)
@@ -117,4 +135,12 @@ class OptionsScheduleTableViewController: UITableViewController {
 
         }
     }
+}
+
+extension ScheduleOptionsTableViewController: SwitchRepeatProtocol {
+    func switchRepeat(value: Bool) {
+        scheduleModel.scheduleRepeaet = value
+    }
+    
+    
 }

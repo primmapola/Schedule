@@ -37,15 +37,7 @@ class OptionsTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
-//    let addImageContact: UIImageView = {
-//       let iv = UIImageView()
-//        iv.layer.cornerRadius = 10
-//        iv.translatesAutoresizingMaskIntoConstraints = false
-//        iv.isHidden = true
-//        iv.image = UIImage(systemName: "person.fill.badge.plus")
-//
-//        return iv
-//    }()
+    weak var switchRepeatDelegate: SwitchRepeatProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -88,7 +80,7 @@ class OptionsTableViewCell: UITableViewCell {
     }
     
     @objc func switchChanges(paramTarget: UISwitch) {
-        
+        switchRepeatDelegate?.switchRepeat(value: paramTarget.isOn)
     }
     
     func setConstraints() {

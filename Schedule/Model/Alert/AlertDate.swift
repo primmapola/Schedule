@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func AlertDate(label: UILabel, completionHandler: @escaping (Int, NSDate) -> Void) {
+    func AlertDate(label: UILabel, completionHandler: @escaping (Int, Date) -> Void) {
         
         let alert = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         
@@ -31,7 +31,7 @@ extension UIViewController {
             guard let weekday = component.weekday else { return }
             let numberWeekday = weekday
             let date = datePicker.date
-            completionHandler(numberWeekday, date as NSDate)
+            completionHandler(numberWeekday, date)
             
             label.text = dateString
         }
