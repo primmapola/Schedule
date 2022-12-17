@@ -14,7 +14,10 @@ class TaskOptionsTableView: UITableViewController {
     
     let headerNameArray = ["ДАТА", "НАЗВАНИЕ", "ЗАДАЧА", "ЦВЕТ"]
     let cellNames = ["Дата","Название","Задача",""]
-
+    
+    var hexColorAttribute = "1A4766"
+    
+    var taskModel = TaskModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,17 @@ class TaskOptionsTableView: UITableViewController {
         
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    @objc func saveButtonTapped() {
+        taskModel.taskColor = hexColorAttribute
+//        StorageManager.shared.save(model: taskModel)
+        taskModel = TaskModel()
+        alertOk(title: "Сохранено")
+        hexColorAttribute = "1A4766"
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +56,7 @@ class TaskOptionsTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTasksCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellTaskConfiguration(nameArray: cellNames, indexPath: indexPath)
+        cell.cellTaskConfiguration(nameArray: cellNames, indexPath: indexPath, hexColor: hexColorAttribute)
         
         return cell
     }
@@ -67,18 +81,20 @@ class TaskOptionsTableView: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            AlertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-                print(numberWeekday, date)}
+            AlertDate(label: cell.nameCellLabel) { [self] (date) in
+                taskModel.taskDate = date
+            }
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Название", placeholder: "Введите название заметки") {
-                text in print(text)
+            alertForCellName(label: cell.nameCellLabel, name: "Название", placeholder: "ВВедите название") { [self] name in
+                taskModel.taskName = name
             }
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Задача", placeholder: "") {
-                text in print(text)
+            alertForCellName(label: cell.nameCellLabel, name: "Содержимое", placeholder: "") { [self] content in
+                taskModel.taskContent = content
             }
         case 3:
-            pushControllers(vc: TaskColorsTableViewController())
+            let colors = TaskColorsTableViewController()
+            pushControllers(vc: colors)
         default:
             print("")
         }
