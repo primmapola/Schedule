@@ -7,10 +7,14 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class ScheduleViewController: UITabBarController {
     
     var calendarHeightConstraint: NSLayoutConstraint!
+    
+    let realm = try! Realm()
+    var scheduleList: Results<ScheduleModel>!
     
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
@@ -41,6 +45,9 @@ class ScheduleViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scheduleList = realm.objects(ScheduleModel.self)
+//        print(scheduleList ?? 0)
         
         view.backgroundColor = .white
         title = "Schedule"

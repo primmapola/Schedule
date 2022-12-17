@@ -33,14 +33,14 @@ class ColorTableViewCell: UITableViewCell {
     
     func cellConfiguration(indexPath: IndexPath) {
         switch indexPath.section {
-        case 0: backgroundViewCell.backgroundColor = .red
-        case 1: backgroundViewCell.backgroundColor = .yellow
-        case 2: backgroundViewCell.backgroundColor = .orange
-        case 3: backgroundViewCell.backgroundColor = .purple
-        case 4: backgroundViewCell.backgroundColor = .blue
-        case 5: backgroundViewCell.backgroundColor = .cyan
+        case 0: backgroundViewCell.backgroundColor = UIColor().colorFromHex("BE2813")
+        case 1: backgroundViewCell.backgroundColor = UIColor().colorFromHex("F07F5A")
+        case 2: backgroundViewCell.backgroundColor = UIColor().colorFromHex("F3AF22")
+        case 3: backgroundViewCell.backgroundColor = UIColor().colorFromHex("467C24")
+        case 4: backgroundViewCell.backgroundColor = UIColor().colorFromHex("2D7FC1")
+        case 5: backgroundViewCell.backgroundColor = UIColor().colorFromHex("1A4766")
         default:
-            backgroundViewCell.backgroundColor = .green
+            backgroundViewCell.backgroundColor = UIColor().colorFromHex("FFFFFF")
         }
     }
     

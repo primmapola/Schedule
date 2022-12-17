@@ -25,7 +25,7 @@ extension UIViewController {
             completion(photoLibrary)
         }
         
-        let cancel = UIAlertAction(title: "CANCEL", style: .default)
+        let cancel = UIAlertAction(title: "Отмена", style: .default)
         
         alertController.addAction(camera)
         alertController.addAction(photoLibrary)

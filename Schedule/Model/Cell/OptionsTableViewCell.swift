@@ -31,7 +31,6 @@ class OptionsTableViewCell: UITableViewCell {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = .systemCyan
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         
         return repeatSwitch
@@ -53,16 +52,13 @@ class OptionsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellScheduleConfiguration(nameArray: [[String]], indexPath: IndexPath) {
+    func cellScheduleConfiguration(nameArray: [[String]], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .systemCyan
-        }
-        
-        if indexPath == [4,0] {
-            repeatSwitch.isHidden = false
-        }
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
+        repeatSwitch.isHidden = (indexPath.section == 4 ? false: true)
+        repeatSwitch.onTintColor = color
     }
     
     func cellContactCofiguration(nameArray: [String], indexPath: IndexPath) {
@@ -71,12 +67,11 @@ class OptionsTableViewCell: UITableViewCell {
         indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
     }
     
-    func cellTaskConfiguration(nameArray: [String], indexPath: IndexPath) {
+    func cellTaskConfiguration(nameArray: [String], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section]
         
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .systemCyan
-        }
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
     }
     
     @objc func switchChanges(paramTarget: UISwitch) {

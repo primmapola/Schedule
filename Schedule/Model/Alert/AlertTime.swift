@@ -21,7 +21,7 @@ extension UIViewController {
         
         alert.view.addSubview(datePicker)
         
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: "Oк", style: .default) { (action) in
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
@@ -32,7 +32,7 @@ extension UIViewController {
             label.text = timeString
         }
         
-        let cancel = UIAlertAction(title: "CANCEL", style: .default)
+        let cancel = UIAlertAction(title: "Отмена", style: .default)
         
         alert.addAction(ok)
         alert.addAction(cancel)

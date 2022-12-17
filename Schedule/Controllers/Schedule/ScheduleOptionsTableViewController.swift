@@ -22,7 +22,9 @@ class ScheduleOptionsTableViewController: UITableViewController {
         ["Повторять каждые 7 дней"]
     ]
     
-    private let scheduleModel = ScheduleModel()
+    var hexColorAttribute = "1A4766"
+    
+    var scheduleModel = ScheduleModel()
 
     
     override func viewDidLoad() {
@@ -39,12 +41,17 @@ class ScheduleOptionsTableViewController: UITableViewController {
         
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
-        
+            
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
     }
     
     @objc func saveButtonTapped() {
+        scheduleModel.scheduleColor = hexColorAttribute
         StorageManager.shared.save(model: scheduleModel)
+        scheduleModel = ScheduleModel()
+        alertOk(title: "Сохранено")
+        hexColorAttribute = "1A4766"
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,7 +75,8 @@ class ScheduleOptionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellScheduleConfiguration(nameArray: cellNameArray, indexPath: indexPath)
+        cell.cellScheduleConfiguration(nameArray: cellNameArray, indexPath: indexPath, hexColor: hexColorAttribute)
+        cell.switchRepeatDelegate = self
         
         return cell
     }
@@ -102,20 +110,20 @@ class ScheduleOptionsTableViewController: UITableViewController {
                 scheduleModel.scheduleTime = time
             }
         case [1,0]:
-            alertForCellName(label: cell.nameCellLabel, name: "Предмет", placeholder: "Введите название предмета") { text in print(text)
-                self.scheduleModel.scheduleName = text
+            alertForCellName(label: cell.nameCellLabel, name: "Предмет", placeholder: "Введите название предмета") { [self] name in
+                scheduleModel.scheduleName = name
             }
         case [1,1]:
-            alertForCellName(label: cell.nameCellLabel, name: "Тип", placeholder: "Введите тип предмета") { text in
-                self.scheduleModel.scheduleType = text
+            alertForCellName(label: cell.nameCellLabel, name: "Тип", placeholder: "Введите тип предмета") { [self] text in
+                scheduleModel.scheduleType = text
             }
         case [1,2]:
-            alertForCellName(label: cell.nameCellLabel, name: "Корпус", placeholder: "Введите номер корпуса") { text in
-                self.scheduleModel.scheduleBuilding = text
+            alertForCellName(label: cell.nameCellLabel, name: "Корпус", placeholder: "Введите номер корпуса") { [self] text in
+                scheduleModel.scheduleBuilding = text
             }
         case [1,3]:
-            alertForCellName(label: cell.nameCellLabel, name: "Аудитория", placeholder: "Введите номер аудитории") { text in
-                self.scheduleModel.scheduleAudience = text
+            alertForCellName(label: cell.nameCellLabel, name: "Аудитория", placeholder: "Введите номер аудитории") { [self] text in
+                scheduleModel.scheduleAudience = text
             }
         case [2,0]:
             let teachers = TeachersViewController()
@@ -144,3 +152,5 @@ extension ScheduleOptionsTableViewController: SwitchRepeatProtocol {
     
     
 }
+
+

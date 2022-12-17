@@ -19,4 +19,10 @@ class StorageManager {
             realm.add(model)
         }
     }
+    
+    func save(model: TaskModel) {
+        try! realm.write {
+            realm.add(model)
+        }
+    }
 }

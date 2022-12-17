@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7432DE39294E0ABD00673152 /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE38294E0ABD00673152 /* AlertOk.swift */; };
+		7432DE3B294E0CDC00673152 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE3A294E0CDC00673152 /* AlertError.swift */; };
+		7432DE3D294E3A8200673152 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432DE3C294E3A8200673152 /* TaskModel.swift */; };
 		744922A02942B1F500C99C44 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7449229F2942B1F500C99C44 /* FSCalendar */; };
 		744922A22942B60900C99C44 /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922A12942B60900C99C44 /* HeaderOptionsTableViewCell.swift */; };
 		744922BF2946753400C99C44 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744922BE2946753400C99C44 /* AlertDate.swift */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7432DE38294E0ABD00673152 /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		7432DE3A294E0CDC00673152 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		7432DE3C294E3A8200673152 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		7449229B2942A8E900C99C44 /* FSCalendar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FSCalendar; path = "../../../Library/Developer/Xcode/DerivedData/asd-etktxgbblmbkjxdnqwkolxjhwkwp/SourcePackages/checkouts/FSCalendar"; sourceTree = "<group>"; };
 		7449229D2942B17700C99C44 /* FSCalendar-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "FSCalendar-master"; path = "../../Downloads/FSCalendar-master"; sourceTree = "<group>"; };
 		744922A12942B60900C99C44 /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				744922C129467B0900C99C44 /* AlertTime.swift */,
 				744922C329467D3A00C99C44 /* AlertCellName.swift */,
 				744922E7294730AC00C99C44 /* AlertPhoto.swift */,
+				7432DE38294E0ABD00673152 /* AlertOk.swift */,
+				7432DE3A294E0CDC00673152 /* AlertError.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7449233429488E8000C99C44 /* ScheduleModel.swift */,
+				7432DE3C294E3A8200673152 /* TaskModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -514,13 +523,16 @@
 				744922C229467B0900C99C44 /* AlertTime.swift in Sources */,
 				74B2421829411A4D0015B836 /* AppDelegate.swift in Sources */,
 				744923392948904500C99C44 /* StorageManager.swift in Sources */,
+				7432DE39294E0ABD00673152 /* AlertOk.swift in Sources */,
 				7489794D29417309001E2F91 /* UIStackView.swift in Sources */,
 				74897951294181F7001E2F91 /* TasksTableViewCell.swift in Sources */,
 				744922BF2946753400C99C44 /* AlertDate.swift in Sources */,
 				7449233529488E8000C99C44 /* ScheduleModel.swift in Sources */,
 				7489794929416A74001E2F91 /* ScheduleTableViewCell.swift in Sources */,
 				74B2424D29411F270015B836 /* TasksViewController.swift in Sources */,
+				7432DE3B294E0CDC00673152 /* AlertError.swift in Sources */,
 				748979602942A200001E2F91 /* OptionsTableViewCell.swift in Sources */,
+				7432DE3D294E3A8200673152 /* TaskModel.swift in Sources */,
 				7489795B29429A43001E2F91 /* ScheduleOptionsTableViewController.swift in Sources */,
 				744922E429472DC200C99C44 /* ContactTableViewCell.swift in Sources */,
 				7489795629418D68001E2F91 /* PressButtonProtocols.swift in Sources */,
